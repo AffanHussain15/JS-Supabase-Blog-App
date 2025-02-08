@@ -1,0 +1,41 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(Assests/background\ blog\ app\ 3.webp);
+    background-size: cover;
+}
+#dashboard{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(69, 77, 150);
+    color: white;
+    font-weight: 900;
+}
+
+#upload-div{
+    margin: 50px 0px 0px 50px;
+    width: 300px;
+    /* height: 200px; */
+    /* background-color: rgba(11, 4, 54, 0.151); */
+    /* border: 1px solid black; */
+    gap: 20px;
+}
+
+#upload-div input{
+    height: 30px;
+    width: 200px;
+}
+
+
+#upload-div textarea{
+    width: 200px;
+}
+#title{
+    margin-bottom: 50px;
+}
+#description{
+    margin-bottom: 20px;
+}

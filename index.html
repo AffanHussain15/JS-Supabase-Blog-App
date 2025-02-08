@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <div id="main">
+      <!-- <div>
+        <button id="logout-btn">Logout</button>
+      </div> -->
+      <h1 id="dashboard">Blog App</h1>
+      <div id="upload-div">
+        <input type="text" id="title" placeholder="Title" required>
+        <textarea  id="description" placeholder="Description" required></textarea>
+        <input type="file" id="image" accept="image/*" />
+        <button id="upload">Upload</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
