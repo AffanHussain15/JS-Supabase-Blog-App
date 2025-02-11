@@ -3,13 +3,13 @@ const supabaseKey = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supaBase = supabase.createClient(supabaseUrl, supabaseKey);
 
 const create = document.getElementById("upload");
-create.addEventListener('click', async () => {
-    const title = document.getElementById("title").value
-    const description = document.getElementById("description").value
-    const imageFile = document.getElementById("image").files[0];
+create.addEventListener("click", async () => {
+  const title = document.getElementById("title").value;
+  const description = document.getElementById("description").value;
+  const imageFile = document.getElementById("image").files[0];
   try {
-    if (!imageFile) {
-      alert("Please select an image to upload.");
+    if (!title || !description || !imageFile) {
+      alert("Please fill all field.");
       return;
     }
     const imagePath = `blog-images/${Date.now()}-${imageFile.name}`;
@@ -29,6 +29,18 @@ create.addEventListener('click', async () => {
 
     console.log("Image uploaded:", imageUrl);
 
+    const { data: dbData, error: dbError } = await supaBase
+      .from("Blog_App")
+      .insert([
+        {
+          title: title,
+          description: description,
+          image_url: imageUrl,
+        },
+      ]);
+    console.log(dbData);
+    console.log(dbError);
+    if (dbError) throw dbError;
   } catch (error) {
     console.error("Error", error.message);
     alert("Failed to upload blog!");
