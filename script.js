@@ -41,6 +41,7 @@ create.addEventListener("click", async () => {
     console.log(dbData);
     console.log(dbError);
     if (dbError) throw dbError;
+    alert("Upload successful")
   } catch (error) {
     console.error("Error", error.message);
     alert("Failed to upload blog!");
